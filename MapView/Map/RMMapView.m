@@ -3943,4 +3943,29 @@
                      }];
 }
 
+
+- (void)setOpacity:(float)opacity forTileSource:(id <RMTileSource>)tileSource
+{
+    NSArray *tileSources = [self tileSources];
+    
+    [tileSources enumerateObjectsUsingBlock:^(id <RMTileSource> currentTileSource, NSUInteger index, BOOL *stop)
+     {
+         if (tileSource == currentTileSource)
+         {
+             [self setOpacity:opacity forTileSourceAtIndex:index];
+             *stop = YES;
+         }
+     }];
+}
+
+- (void)setOpacity:(float)opacity forTileSourceAtIndex:(NSUInteger)index
+{
+    if (index >= [_tiledLayersSuperview.subviews count])
+        return;
+    
+    ((RMMapTiledLayerView *)[_tiledLayersSuperview.subviews objectAtIndex:index]).tiledLayer.opacity = opacity;
+}
+
+
+
 @end

@@ -524,4 +524,16 @@ typedef enum : NSUInteger {
 *   @param animated Whether changes to the map center or rotation should be animated when the mode is changed. */
 - (void)setUserTrackingMode:(RMUserTrackingMode)mode animated:(BOOL)animated;
 
+
+/** Sets the opacity of a tile source
+ *   @param opacity A float for opacity 0 - 1
+ *   @param tileSource The tile source to change the opacity for */
+- (void)setOpacity:(float)opacity forTileSource:(id <RMTileSource>)tileSource;
+
+/** set opacity of a tile source at a given index.
+ *   @param isHidden A Boolean indicating whether to hide the tile source or not.
+ *   @param index The index of the tile source to hide or show. */
+- (void)setOpacity:(float)opacity forTileSourceAtIndex:(NSUInteger)index;
+
+
 @end

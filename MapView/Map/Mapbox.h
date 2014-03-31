@@ -39,6 +39,10 @@
 #import "RMInteractiveSource.h"
 #import "RMMBTilesSource.h"
 #import "RMMapboxSource.h"
+#import "RMOpenStreetMapSource.h"
+#import "RMOpenCycleMapSource.h"
+#import "RMMapQuestOSMSource.h"
+
 #import "RMMapView.h"
 #import "RMMapViewDelegate.h"
 #import "RMMarker.h"
@@ -46,6 +50,7 @@
 #import "RMPointAnnotation.h"
 #import "RMPolygonAnnotation.h"
 #import "RMPolylineAnnotation.h"
+#import "RMProjection.h"
 #import "RMShape.h"
 #import "RMStaticMapView.h"
 #import "RMTileCache.h"
