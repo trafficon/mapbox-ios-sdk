@@ -42,6 +42,8 @@
 #import "RMOpenStreetMapSource.h"
 #import "RMOpenCycleMapSource.h"
 #import "RMMapQuestOSMSource.h"
+#import "RMGenericMercatorWMSSource.h"
+
 #import "RMMapView.h"
 #import "RMMapViewDelegate.h"
 #import "RMMarker.h"

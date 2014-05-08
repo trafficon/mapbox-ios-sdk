@@ -48,6 +48,8 @@
 		25757F501291C8640083D504 /* RMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 25757F4E1291C8640083D504 /* RMCircle.m */; };
 		3A25A22C18FC2F1400C74FE1 /* RMHessenMapSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A25A22A18FC2F1400C74FE1 /* RMHessenMapSource.h */; };
 		3A25A22D18FC2F1400C74FE1 /* RMHessenMapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A25A22B18FC2F1400C74FE1 /* RMHessenMapSource.m */; };
+		3A772E511918D30000F2B34D /* RMGenericMercatorWMSSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A772E4F1918D30000F2B34D /* RMGenericMercatorWMSSource.h */; };
+		3A772E521918D30000F2B34D /* RMGenericMercatorWMSSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A772E501918D30000F2B34D /* RMGenericMercatorWMSSource.m */; };
 		96492C400FA8AD3400EBA6D2 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 96492C3F0FA8AD3400EBA6D2 /* RMGlobalConstants.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B1EB26C610B5D8E6009F8658 /* RMNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = B1EB26C510B5D8E6009F8658 /* RMNotifications.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B8474BA40EB40094006A0BC1 /* RMDatabaseCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B8474B980EB40094006A0BC1 /* RMDatabaseCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -233,6 +235,8 @@
 		32CA4F630368D1EE00C91783 /* MapView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		3A25A22A18FC2F1400C74FE1 /* RMHessenMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMHessenMapSource.h; sourceTree = "<group>"; };
 		3A25A22B18FC2F1400C74FE1 /* RMHessenMapSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMHessenMapSource.m; sourceTree = "<group>"; };
+		3A772E4F1918D30000F2B34D /* RMGenericMercatorWMSSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGenericMercatorWMSSource.h; sourceTree = "<group>"; };
+		3A772E501918D30000F2B34D /* RMGenericMercatorWMSSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMGenericMercatorWMSSource.m; sourceTree = "<group>"; };
 		96492C3F0FA8AD3400EBA6D2 /* RMGlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
 		B1EB26C510B5D8E6009F8658 /* RMNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNotifications.h; sourceTree = "<group>"; };
 		B83E64B60E80E73F001663B6 /* RMPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPixel.h; sourceTree = "<group>"; };
@@ -387,6 +391,8 @@
 		16EC85CB133CA69A00219947 /* Map Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3A772E4F1918D30000F2B34D /* RMGenericMercatorWMSSource.h */,
+				3A772E501918D30000F2B34D /* RMGenericMercatorWMSSource.m */,
 				3A25A22A18FC2F1400C74FE1 /* RMHessenMapSource.h */,
 				3A25A22B18FC2F1400C74FE1 /* RMHessenMapSource.m */,
 				16E5A63815E531F200C92A5A /* RMCompositeSource.h */,
@@ -767,6 +773,7 @@
 				B8C974270E8A19B2007D16AD /* RMPixel.h in Headers */,
 				B8C9742A0E8A19B2007D16AD /* RMTileImage.h in Headers */,
 				B8C9742D0E8A19B2007D16AD /* RMFractalTileProjection.h in Headers */,
+				3A772E511918D30000F2B34D /* RMGenericMercatorWMSSource.h in Headers */,
 				23A0AAEB0EB90AA6003A4521 /* RMFoundation.h in Headers */,
 				96492C400FA8AD3400EBA6D2 /* RMGlobalConstants.h in Headers */,
 				B1EB26C610B5D8E6009F8658 /* RMNotifications.h in Headers */,
@@ -934,6 +941,7 @@
 				16EC85D3133CA6C300219947 /* RMAbstractMercatorTileSource.m in Sources */,
 				16EC85D5133CA6C300219947 /* RMAbstractWebMapSource.m in Sources */,
 				16EC85D7133CA6C300219947 /* RMCacheObject.m in Sources */,
+				3A772E521918D30000F2B34D /* RMGenericMercatorWMSSource.m in Sources */,
 				160EEDB013D41DEC007C5501 /* RMAnnotation.m in Sources */,
 				1606C9FF13D86BA400547581 /* RMOpenCycleMapSource.m in Sources */,
 				16FAB66513E03D55002F4E1C /* RMQuadTree.m in Sources */,
