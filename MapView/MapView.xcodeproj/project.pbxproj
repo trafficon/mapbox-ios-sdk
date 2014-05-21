@@ -46,6 +46,8 @@
 		23A0AAEB0EB90AA6003A4521 /* RMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A0AAEA0EB90AA6003A4521 /* RMFoundation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		25757F4F1291C8640083D504 /* RMCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 25757F4D1291C8640083D504 /* RMCircle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		25757F501291C8640083D504 /* RMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 25757F4E1291C8640083D504 /* RMCircle.m */; };
+		3A125E69192CCD7D008BB758 /* RMGeoserverTMSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A125E67192CCD7D008BB758 /* RMGeoserverTMSource.h */; };
+		3A125E6A192CCD7D008BB758 /* RMGeoserverTMSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A125E68192CCD7D008BB758 /* RMGeoserverTMSource.m */; };
 		3A25A22C18FC2F1400C74FE1 /* RMHessenMapSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A25A22A18FC2F1400C74FE1 /* RMHessenMapSource.h */; };
 		3A25A22D18FC2F1400C74FE1 /* RMHessenMapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A25A22B18FC2F1400C74FE1 /* RMHessenMapSource.m */; };
 		3A772E511918D30000F2B34D /* RMGenericMercatorWMSSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A772E4F1918D30000F2B34D /* RMGenericMercatorWMSSource.h */; };
@@ -233,6 +235,8 @@
 		25757F4E1291C8640083D504 /* RMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMCircle.m; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* MapView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		3A125E67192CCD7D008BB758 /* RMGeoserverTMSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGeoserverTMSource.h; sourceTree = "<group>"; };
+		3A125E68192CCD7D008BB758 /* RMGeoserverTMSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMGeoserverTMSource.m; sourceTree = "<group>"; };
 		3A25A22A18FC2F1400C74FE1 /* RMHessenMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMHessenMapSource.h; sourceTree = "<group>"; };
 		3A25A22B18FC2F1400C74FE1 /* RMHessenMapSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMHessenMapSource.m; sourceTree = "<group>"; };
 		3A772E4F1918D30000F2B34D /* RMGenericMercatorWMSSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGenericMercatorWMSSource.h; sourceTree = "<group>"; };
@@ -409,6 +413,8 @@
 				16FFF2CA14E3DBF700A170EC /* RMMapQuestOpenAerialSource.m */,
 				DD8CDB4814E0507100B73EB9 /* RMMapQuestOSMSource.h */,
 				DD8CDB4914E0507100B73EB9 /* RMMapQuestOSMSource.m */,
+				3A125E67192CCD7D008BB758 /* RMGeoserverTMSource.h */,
+				3A125E68192CCD7D008BB758 /* RMGeoserverTMSource.m */,
 				DD2B375314CF8197008DE8CB /* RMMBTilesSource.h */,
 				DD2B375414CF8197008DE8CB /* RMMBTilesSource.m */,
 				1606C9FC13D86BA300547581 /* RMOpenCycleMapSource.h */,
@@ -799,6 +805,7 @@
 				DD2B374F14CF814F008DE8CB /* FMDatabasePool.h in Headers */,
 				DD2B375114CF814F008DE8CB /* FMDatabaseQueue.h in Headers */,
 				DD1E3C6E161F954F004FC649 /* SMCalloutView.h in Headers */,
+				3A125E69192CCD7D008BB758 /* RMGeoserverTMSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,6 +979,7 @@
 				DD41960216250ED40049E6BA /* RMTileCacheDownloadOperation.m in Sources */,
 				DD4195CA162356900049E6BA /* RMBingSource.m in Sources */,
 				DD1E3C6F161F954F004FC649 /* SMCalloutView.m in Sources */,
+				3A125E6A192CCD7D008BB758 /* RMGeoserverTMSource.m in Sources */,
 				DD7C7E39164C894F0021CCA5 /* RMStaticMapView.m in Sources */,
 				DDE357E81651F570001DB842 /* RMPointAnnotation.m in Sources */,
 				3A25A22D18FC2F1400C74FE1 /* RMHessenMapSource.m in Sources */,

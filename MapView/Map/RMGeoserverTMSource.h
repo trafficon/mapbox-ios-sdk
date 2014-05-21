@@ -1,7 +1,7 @@
 //
-// Mapbox.h
-// 
-// Copyright (c) 2008-2013, Mapbox & Route-Me Contributors
+//  RMMapQuestOSMSource.h
+//
+// Copyright (c) 2008-2013, Route-Me Contributors
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -25,38 +25,8 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-// The list of header files for more convenient Route-Me import to projects.
-// (in alphabetic order)
+#import "RMAbstractWebMapSource.h"
 
-#import "RMAnnotation.h"
-#import "RMCacheObject.h"
-#import "RMCircle.h"
-#import "RMCircleAnnotation.h"
-#import "RMCompositeSource.h"
-#import "RMConfiguration.h"
-#import "RMCoordinateGridSource.h"
-#import "RMDatabaseCache.h"
-#import "RMInteractiveSource.h"
-#import "RMMBTilesSource.h"
-#import "RMMapboxSource.h"
-#import "RMOpenStreetMapSource.h"
-#import "RMOpenCycleMapSource.h"
-#import "RMMapQuestOSMSource.h"
-#import "RMGenericMercatorWMSSource.h"
-#import "RMHessenMapSource.h"
-#import "RMGeoserverTMSource.h"
+@interface RMGeoserverTMSource : RMAbstractWebMapSource
 
-#import "RMMapView.h"
-#import "RMMapViewDelegate.h"
-#import "RMMarker.h"
-#import "RMMemoryCache.h"
-#import "RMPointAnnotation.h"
-#import "RMPolygonAnnotation.h"
-#import "RMPolylineAnnotation.h"
-#import "RMProjection.h"
-#import "RMShape.h"
-#import "RMStaticMapView.h"
-#import "RMTileCache.h"
-#import "RMTileMillSource.h"
-#import "RMUserLocation.h"
-#import "RMUserTrackingBarButtonItem.h"
+@end
