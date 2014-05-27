@@ -50,8 +50,8 @@
     y = pow(2, tile.zoom) - y - 1;
     
 //	return [NSURL URLWithString:[NSString stringWithFormat:@"http://otile1.mqcdn.com/tiles/1.0.0/osm/%d/%d/%d.png", tile.zoom, tile.x, tile.y]];
-	return [NSURL URLWithString:[NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:ivm_clip@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y]];
-//	return [NSURL URLWithString:[NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:realtime_fcd@EPSG:4326@png/%d/%d/%d.png", tile.zoom, tile.x, y]];
+//	return [NSURL URLWithString:[NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:ivm_clip@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y]];
+	return [NSURL URLWithString:[NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:realtime_fcd@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y]];
 }
 
 - (NSString *)uniqueTilecacheKey
