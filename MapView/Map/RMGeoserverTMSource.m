@@ -34,8 +34,8 @@
     if (!(self = [super init]))
         return nil;
     
-    self.minZoom = 1;
-    self.maxZoom = 18;
+    self.minZoom = 0;
+    self.maxZoom = 21;
     
 	return self;
 }
@@ -49,9 +49,18 @@
     int y = tile.y;
     y = pow(2, tile.zoom) - y - 1;
     
+    // TMS
+    
 //	return [NSURL URLWithString:[NSString stringWithFormat:@"http://otile1.mqcdn.com/tiles/1.0.0/osm/%d/%d/%d.png", tile.zoom, tile.x, tile.y]];
 //	return [NSURL URLWithString:[NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:ivm_clip@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y]];
-	return [NSURL URLWithString:[NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:realtime_fcd@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y]];
+//	return [NSURL URLWithString:[NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:realtime_fcd@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y]];
+
+    // WMTS
+    NSString *wmtsLink = [NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/wmts?service=WMTS&version=1.0.0&request=gettile&layer=divis:realtime_fcd&style=default&tileMatrixSet=EPSG:900913&tileMatrix=EPSG:900913:%d&TileRow=%d&TileCol=%d&format=image/png", tile.zoom, tile.x, y];
+    
+    NSLog(@"URL: %@", wmtsLink);
+
+    return [NSURL URLWithString:wmtsLink];
 }
 
 - (NSString *)uniqueTilecacheKey
