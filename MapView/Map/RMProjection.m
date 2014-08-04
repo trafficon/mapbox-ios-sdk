@@ -297,7 +297,15 @@ static RMProjection *_latitudeLongitudeProjection = nil;
              + (15*eccSquared*eccSquared/256 + 45*eccSquared*eccSquared*eccSquared/1024) * sin(4*latitudeRad)
              - (35*eccSquared*eccSquared*eccSquared/3072) * sin(6*latitudeRad));
 
-    *easting = (double)(k0*N*(A+(1-T+C)*A*A*A/6 + (5 - 18*T+T*T + 72*C - 58*eccPrimeSquared)*A*A*A*A*A / 120) + 500000.0);
+    NSLog(@"k0 %f",k0);
+    NSLog(@"N %f",N);
+    NSLog(@"A %f",A);
+    NSLog(@"T %f",N);
+    NSLog(@"C %f",N);
+    NSLog(@"eccPrimeSquared %f",eccPrimeSquared);
+//    *easting = (double)(k0*N*(A+(1-T+C)*A*A*A/6 + (5 - 18*T+T*T + 72*C - 58*eccPrimeSquared)*A*A*A*A*A / 120) + 500000.0);
+    *easting = (double)(k0*N*(A+(1-T+C)*A*A*A/6) + 500000.0);
+    NSLog(@"easting: %f",(double)(k0*N*(A+(1-T+C)*A*A*A/6) + 500000.0));
 
     *northing = (double)(k0 * (M + N*tan(latitudeRad) * (A*A/2 + (5 - T + 9*C + 4*C*C) * A*A*A*A/24 + (61 - 58*T + T*T + 600*C - 330*eccPrimeSquared) * A*A*A*A*A*A/720)));
 

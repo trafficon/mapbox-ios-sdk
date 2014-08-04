@@ -29,6 +29,8 @@
 
 @implementation RMGeoserverTMSource
 
+@synthesize layerName;
+
 - (id)init
 {
     if (!(self = [super init]))
@@ -40,32 +42,42 @@
 	return self;
 }
 
+- (id)initWithLayerName:(NSString*)name {
+    if (!(self = [super init]))
+        return nil;
+    
+    self.layerName = name;
+    return self;
+}
+
 - (NSURL *)URLForTile:(RMTile)tile
 {
 	NSAssert4(((tile.zoom >= self.minZoom) && (tile.zoom <= self.maxZoom)),
 			  @"%@ tried to retrieve tile with zoomLevel %d, outside source's defined range %f to %f",
 			  self, tile.zoom, self.minZoom, self.maxZoom);
     
+    // Umrechnung fuer TMS
     int y = tile.y;
     y = pow(2, tile.zoom) - y - 1;
     
-    // TMS
+    // TMS Links auf Geoserver (ohne Layername)
+    //
+    //    NSString *tmsMapquest = [NSString stringWithFormat:@"http://otile1.mqcdn.com/tiles/1.0.0/osm/%d/%d/%d.png", tile.zoom, tile.x, tile.y];
+    //	NSString *tmsIvmClip = [NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:ivm_clip@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y];
+    //	NSString *tmsRealtime = [NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:realtime_fcd@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y];
+    //    NSString *tmsRadnetz = [NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:radnetz_hessen@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y];
     
-//	return [NSURL URLWithString:[NSString stringWithFormat:@"http://otile1.mqcdn.com/tiles/1.0.0/osm/%d/%d/%d.png", tile.zoom, tile.x, tile.y]];
-//	return [NSURL URLWithString:[NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:ivm_clip@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y]];
-//	return [NSURL URLWithString:[NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/tms/1.0.0/divis:realtime_fcd@EPSG:900913@png/%d/%d/%d.png", tile.zoom, tile.x, y]];
-
-    // WMTS
-    NSString *wmtsLink = [NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/wmts?service=WMTS&version=1.0.0&request=gettile&layer=divis:realtime_fcd&style=default&tileMatrixSet=EPSG:900913&tileMatrix=EPSG:900913:%d&TileRow=%d&TileCol=%d&format=image/png", tile.zoom, tile.x, y];
+    
+    // WMTS Links auf Geoserver (mit Layername)
+    NSString *wmtsLink = [NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/wmts?service=WMTS&version=1.0.0&request=gettile&layer=%@&style=default&tileMatrixSet=EPSG:900913&tileMatrix=EPSG:900913:%d&TileRow=%d&TileCol=%d&format=image/png", self.layerName, tile.zoom, tile.y, tile.x];
     
     NSLog(@"URL: %@", wmtsLink);
-
     return [NSURL URLWithString:wmtsLink];
 }
 
 - (NSString *)uniqueTilecacheKey
 {
-	return @"ivm GmbH";
+	return layerName;
 }
 
 - (NSString *)shortName
@@ -80,7 +92,7 @@
 
 - (NSString *)shortAttribution
 {
-	return @"© ivm GmbH";
+	return @"Radnetz von ivm GmbH";
 }
 
 - (NSString *)longAttribution

@@ -29,4 +29,8 @@
 
 @interface RMGeoserverTMSource : RMAbstractWebMapSource
 
+@property (strong) NSString *layerName;
+
+- (id)initWithLayerName:(NSString*)name;
+
 @end

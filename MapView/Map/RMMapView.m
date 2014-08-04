@@ -3114,6 +3114,13 @@
         _currentAnnotation.layer.zPosition = _currentCallout.layer.zPosition = MAXFLOAT;
 }
 
+-(void)calloutViewWasSelected:(SMCalloutView *)calloutView {
+    if(_delegateHasTapOnLabelForAnnotation)
+    {
+        [self.delegate tapOnLabelForAnnotation:_currentAnnotation onMap:self];
+    }
+}
+
 - (NSArray *)annotations
 {
     return [_annotations allObjects];
@@ -3776,8 +3783,8 @@
         _attributionButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
         _attributionButton.translatesAutoresizingMaskIntoConstraints = NO;
         [_attributionButton addTarget:self action:@selector(showAttribution:) forControlEvents:UIControlEventTouchUpInside];
-        _attributionButton.frame = CGRectMake(self.bounds.size.width  - 30,
-                                              self.bounds.size.height - 30,
+        _attributionButton.frame = CGRectMake(self.bounds.size.width  - 40,
+                                              self.bounds.size.height - 40,
                                               _attributionButton.bounds.size.width,
                                               _attributionButton.bounds.size.height);
         [self addSubview:_attributionButton];
