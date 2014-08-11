@@ -71,7 +71,7 @@
     // WMTS Links auf Geoserver (mit Layername)
     NSString *wmtsLink = [NSString stringWithFormat:@"http://geoserver.trafficon.eu/geoserver/gwc/service/wmts?service=WMTS&version=1.0.0&request=gettile&layer=%@&style=default&tileMatrixSet=EPSG:900913&tileMatrix=EPSG:900913:%d&TileRow=%d&TileCol=%d&format=image/png", self.layerName, tile.zoom, tile.y, tile.x];
     
-    NSLog(@"URL: %@", wmtsLink);
+    // NSLog(@"URL: %@", wmtsLink);
     return [NSURL URLWithString:wmtsLink];
 }
 
